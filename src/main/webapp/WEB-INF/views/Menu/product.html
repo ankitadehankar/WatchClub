@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   <script src="Scripts/Script.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        Search : <input type="text" ng-model="searchText" placeholder="Search employees" />
+        <br /><br />
+        <table>
+            <thead >
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary  }} </td>
+                    <td> {{ employee.city  }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
